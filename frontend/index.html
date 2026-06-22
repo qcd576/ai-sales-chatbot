@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="description" content="智选科技AI智能客服聊天机器人" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="智选AI客服" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>智选科技 - AI智能客服</title>
+    <style>
+      /* 确保Android WebView中文正常显示 */
+      * { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Droid Sans Fallback", sans-serif; }
+      body { background: #f3f4f6; margin: 0; }
+    </style>
+  </head>
+  <body class="bg-gray-50" style="font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Droid Sans Fallback', sans-serif;">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js').then(
+            function(reg) { console.log('SW registered:', reg.scope); },
+            function(err) { console.log('SW failed:', err); }
+          );
+        });
+      }
+    </script>
+  </body>
+</html>

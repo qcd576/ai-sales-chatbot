@@ -1,0 +1,6 @@
+{
+  "appId": "com.smartpick.aichat",
+  "appName": "智选AI客服",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
