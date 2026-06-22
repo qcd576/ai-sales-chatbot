@@ -65,7 +65,7 @@ export default function ChatPage() {
         }}>智</div>
         <div style={{ flex: 1 }}>
           <div style={{ fontWeight: 600, fontSize: '15px' }}>智选AI客服</div>
-          <div style={{ fontSize: '11px', opacity: 0.85 }}>在线 · 离线模式</div>
+          <div style={{ fontSize: '11px', opacity: 0.85 }}>离线模式</div>
         </div>
         <button onClick={handleNewChat} style={{
           background: 'rgba(255,255,255,0.2)', border: 'none', color: 'white',

@@ -71,7 +71,7 @@ if os.path.exists(FRONTEND_DIR):
             app.get(f"/{fname}")(make_handler(fpath))
 
     # SPA fallback: 所有非API路由返回 index.html
-    @app.get("/{path:path}")
+    @app.api_route("/{path:path}", methods=["GET", "HEAD"])
     async def spa_fallback(path: str):
         """前端SPA路由回退 - 所有非API路径返回index.html"""
         # 尝试提供静态文件

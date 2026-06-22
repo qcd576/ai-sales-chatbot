@@ -23,6 +23,11 @@ dist/
 *.swp
 *.swo
 
+# Deployment scripts (contain credentials)
+auto_deploy.py
+deploy_to_aliyun.sh
+upload_apk.py
+
 # OS
 .DS_Store
 Thumbs.db

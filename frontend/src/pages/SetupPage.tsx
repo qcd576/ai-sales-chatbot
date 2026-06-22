@@ -4,7 +4,7 @@ import { testConnection, setBaseUrl, setUseBackend } from '../services/api'
 
 export default function SetupPage() {
   const navigate = useNavigate()
-  const [url, setUrl] = useState('http://172.22.145.18:8000/api')
+  const [url, setUrl] = useState('http://120.27.247.44:8000/api')
   const [testing, setTesting] = useState(false)
   const [status, setStatus] = useState<'idle' | 'success' | 'fail'>('idle')
 

@@ -6,7 +6,7 @@ import SetupPage from './pages/SetupPage'
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<SetupPage />} />
+      <Route path="/" element={<ChatPage />} />
       <Route path="/setup" element={<SetupPage />} />
       <Route path="/chat" element={<ChatPage />} />
       <Route path="/chat/:sessionId" element={<ChatPage />} />
