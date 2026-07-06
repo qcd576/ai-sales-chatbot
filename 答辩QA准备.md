@@ -59,6 +59,83 @@ SELECT role, content, created_at FROM messages ORDER BY created_at DESC LIMIT 10
 
 ---
 
+### Q2-B: 展示如何打开前端和后端（本地运行演示）
+
+老师可能会让你**现场打开IDE，启动前后端项目**。以下是两种演示方式：
+
+---
+
+#### 方式一：在IDE中展示（VS Code 推荐）
+
+**1. 打开项目**
+```
+用 VS Code 打开文件夹：C:\Users\qcd\Desktop\新建文件夹\ai-sales-chatbot
+```
+
+**2. 启动后端（终端1）**
+```bash
+cd backend
+pip install -r requirements.txt    # 已安装可跳过
+python run.py
+```
+屏幕显示：
+```
+INFO:     Started server process
+INFO:     Uvicorn running on http://127.0.0.1:8000
+```
+然后浏览器打开 `http://localhost:8000/docs` → 展示Swagger交互文档
+
+**3. 启动前端（终端2，另开一个终端）**
+```bash
+cd frontend
+npm install        # 已安装可跳过
+npm run dev
+```
+屏幕显示：
+```
+VITE v6.4.3  ready in XXXms
+Local:   http://localhost:5173/
+```
+然后浏览器打开 `http://localhost:5173` → 展示聊天界面
+
+**4. 前后端联调演示**：
+- 前端输入消息 → 发送到后端 `localhost:8000/api/chat/send`
+- 后端调用DeepSeek API → 返回AI回复 → 前端显示
+
+---
+
+#### 方式二：用命令行直接演示（最简洁）
+
+如果现场不方便开IDE，直接在终端展示：
+
+**后端**：
+```bash
+# 终端1
+cd C:\Users\qcd\Desktop\新建文件夹\ai-sales-chatbot\backend
+python run.py
+# 看到 Uvicorn running on http://127.0.0.1:8000 说明启动成功
+```
+
+**前端**：
+```bash
+# 终端2
+cd C:\Users\qcd\Desktop\新建文件夹\ai-sales-chatbot\frontend
+npm run dev
+# 看到 Local: http://localhost:5173/ 说明启动成功
+```
+
+> 💡 如果老师问 `npm run dev` 和 `npm run build` 的区别：
+> - `npm run dev`：开发模式，支持热更新，修改代码自动刷新
+> - `npm run build`：生产构建，输出到 `dist/` 文件夹，用于部署
+
+---
+
+#### 演示时建议的讲解话术
+
+> "后端用 `python run.py` 一行命令启动，实际上它执行的是 `uvicorn backend.app.main:app`，FastAPI会自动加载路由、初始化数据库。前端用 `npm run dev` 启动Vite开发服务器，它配置了代理规则，所有 `/api` 请求会自动转发到后端的8000端口。前后端分离开发，通过HTTP/JSON通信，两个终端各自启动即可联调。"
+
+---
+
 ### Q3: 演示一下
 
 **在线演示**（推荐，因为可以展示DeepSeek真实AI回复）：
